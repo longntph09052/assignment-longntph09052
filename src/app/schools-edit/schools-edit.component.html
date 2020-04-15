@@ -1,0 +1,46 @@
+<!-- <div *ngIf="SchoolDetail == null">
+	<img src="https://lh3.googleusercontent.com/proxy/vHOEhA9mAbc0vVqexgQ7YXlsRHfIGqQ3hH3U-zkPR5qPqNrgDa2afZ-6bphk8_lCBfl6vGTttM_12wdxM-0SShcXVhJ8A_042DuLSvp0WacMYBBCrL4axNnj6AkaDQ" width="1000">
+</div> -->
+
+<!-- <div *ngIf="SchoolDetail != null"> -->
+<form [formGroup]="schoolForm">
+	<div class="container">
+		<h2 class="text-center">Cập nhật trường</h2>
+    <hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" for="">Tên Trường</th>
+					<td><input type="text" class="form-control"placeholder="School Name" formControlName="name"></td>
+				</tr>
+				<tr>
+					<th scope="col">Logo</th>
+					<td><input type="text" class="form-control"placeholder="URL Logo" formControlName="logo"></td>
+				</tr>
+        <tr>
+					<th scope="col" for="">Hiệu TrưởngTrưởng</th>
+					<td><input type="text" class="form-control"placeholder="President" formControlName="president"></td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Địa chỉ</th>
+					<td><input type="text" class="form-control"placeholder="Address" formControlName="address"></td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Thành Phố</th>
+					<td><input type="text" name="name" class="form-control"placeholder="City/Province" formControlName="province"></td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Giới Thiệu</th>
+					<td><input type="text" class="form-control"placeholder="About School" formControlName="about"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-center">
+            <button type="submit" (click)="saveSchool()"
+							class="btn btn-success">Lưu
+              </button></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</form>
+<!-- </div> -->

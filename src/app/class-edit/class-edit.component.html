@@ -1,0 +1,32 @@
+<form [formGroup]="classForm">
+	<div class="container">
+		<h2 class="text-center">Cập nhật lớp</h2>
+    <hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" for="">Tên Lớp</th>
+					<td><input type="text" class="form-control"placeholder="Class Name" formControlName="name"></td>
+				</tr>
+				<tr>
+					<th scope="col">SỐ phòng</th>
+					<td><input type="text" class="form-control"placeholder="Room Number" formControlName="room_number"></td>
+				</tr>
+        <tr>
+					<th scope="col" for="">Tổng sinh viên</th>
+					<td><input type="text" class="form-control"placeholder="Total Student" formControlName="total_student"></td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Giáo viên</th>
+					<td><input type="text" class="form-control"placeholder="Main Teacher" formControlName="main_teacher"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-center">
+            <button type="submit" (click)="saveClass()"
+							class="btn btn-success">Lưu
+              </button></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</form>

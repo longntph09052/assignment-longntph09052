@@ -20,9 +20,10 @@ export class ManagerComponent implements OnInit {
     });
   }
   removeSchool(id){
-    this.schoolService.removeSchoolById(id).subscribe(response =>{
+    if(confirm('Bạn có chắc chắn muốn xóa trường này ?')){
+      this.schoolService.removeSchoolById(id).subscribe(response =>{
       this.schools = this.schools.filter(obj => obj.id != response.id);
-
-    })
+      })
+    }
   }
 }

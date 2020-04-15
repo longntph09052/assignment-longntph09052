@@ -36,9 +36,12 @@ export class SchoolsDetailComponent implements OnInit {
       })
     });
   }
+  
   removeClass(id){
-    this.classService.removeClass(id).subscribe(response =>{
+    if(confirm('Bạn có chắc chắn muốn xóa lớp này ?')){
+      this.classService.removeClass(id).subscribe(response =>{
       this.classs = this.classs.filter(obj => obj.id != response.id);
-  })
+      })
+    }
   }
 }

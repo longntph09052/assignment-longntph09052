@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { SchoolService } from "../school.service";
 import { ClassService } from "../class.service";
 import { Router, ActivatedRoute } from "@angular/router";
@@ -16,11 +16,27 @@ export class ClassEditComponent implements OnInit {
   classForm = new FormGroup({
     id: new FormControl(null),
     schoolId: new FormControl(''),
-    name: new FormControl(''),
-    room_number: new FormControl(''),
-    total_student: new FormControl(''),
-    main_teacher: new FormControl('')
+    name: new FormControl('',[
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(20)
+    ]),
+    room_number: new FormControl('',[
+      Validators.required
+    ]),
+    total_student: new FormControl('',[
+      Validators.required
+    ]),
+    main_teacher: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp)$/i)
+    ])
   })
+
+  get name() { return this.classForm.get('name'); }
+  get room_number() { return this.classForm.get('room_number'); }
+  get total_student() { return this.classForm.get('total_student'); }
+  get main_teacher() { return this.classForm.get('main_teacher'); }
 
   constructor(
     private schoolService: SchoolService,

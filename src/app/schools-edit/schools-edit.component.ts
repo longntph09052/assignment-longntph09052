@@ -36,6 +36,7 @@ export class SchoolsEditComponent implements OnInit {
     });
   }
   saveSchool() {
+    //lolol
     //neu da co san id thi se update id do, neu khong thi them moi
     if (this.schoolForm.value.id != null) {
       this.schoolSevice.editSchool(this.schoolForm.value).subscribe(data => {
